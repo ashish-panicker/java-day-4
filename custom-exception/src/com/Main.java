@@ -4,15 +4,19 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String [] a){
+    public static void main(String [] a) {
 
         Main m = new Main();
-        try{
-            m.vote();
-        }catch (InvalidAgeException ie){
-            System.err.println(ie.getMessage());
-        }
-
+        boolean isValid = true;
+        do {
+            try {
+                m.vote();
+                isValid = false;
+            } catch (InvalidAgeException ie) {
+                System.err.println(ie.getMessage());
+                isValid = true;
+            }
+        }while (isValid) ;
     }
 
     public void vote() throws InvalidAgeException {
