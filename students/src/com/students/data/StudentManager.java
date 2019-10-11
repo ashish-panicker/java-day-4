@@ -51,12 +51,13 @@ public class StudentManager {
     }
 
     public void sortbyEmail(){
-        Collections.sort(students, new EmailComparator());
+        Collections.sort(students, new EmComparator());
     }
 
     public void sortbyId(){
         Collections.sort(students);
     }
+
     class EmComparator implements Comparator<Student>{
 
         @Override
